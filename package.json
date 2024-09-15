@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "react",
+=======
+  "name": "todolist",
+>>>>>>> c375c5af2f967932faf1fd8da7c1c1b06ffcf9f7
   "private": true,
   "version": "0.0.0",
   "type": "module",
