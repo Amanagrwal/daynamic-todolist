@@ -1,10 +1,19 @@
 import React, { useState } from 'react';
 import "./Todolist.css"
 
+
+
+ const list = "list";
 function Todolist() {
-  const [todo, settodo] = useState([]);
+  const [todo, settodo] = useState(()=>{
+    const data = localStorage.getItem(list);
+ if(!data)   return [];
+     return JSON.parse(data);
+
+  });
   const [input, setinput] = useState("");
    const [undo , setundo] = useState(false);
+
 
   const addbtn = (e) => {
     e.preventDefault();
@@ -61,6 +70,10 @@ const markasall = ()=>{
     )
     setundo(true);
   }
+
+
+
+  localStorage.setItem(list, JSON.stringify(todo));
   return (
     <>
       <div className='container'>
