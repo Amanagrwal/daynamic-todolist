@@ -3,20 +3,16 @@ import "./Todolist.css"
 
  const list = "list";
 function Todolist() {
+  const [input, setinput] = useState("");
+   const [undo , setundo] = useState(false);
   const [todo, settodo] = useState(()=>{
     const data = localStorage.getItem(list);
+
  if(!data)   return [];
      return JSON.parse(data);
   });
-  const [input, setinput] = useState("");
-   const [undo , setundo] = useState(false);
+  
 
-
-
-// function Todolist() {
-//   const [todo, settodo] = useState([]);
-//   const [input, setinput] = useState("");
-//    const [undo , setundo] = useState(false);
 
   const addbtn = (e) => {
     e.preventDefault();
